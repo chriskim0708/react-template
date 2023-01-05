@@ -7,7 +7,7 @@ import {
   RouterProvider,
   Outlet,
 } from 'react-router-dom';
-import { createPostsRoute, createUsersRoute, createPhotosRoute } from './routes';
+import { createPostsRoute, createUsersRoute, createPhotosRoute, createSignInRoute } from './routes';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +15,7 @@ const router = createBrowserRouter(
       {createPostsRoute()}
       {createUsersRoute()}
       {createPhotosRoute()}
+      {createSignInRoute()}
       <Route index element={<Navigate to="/posts" replace />} />
     </Route>,
   ),
