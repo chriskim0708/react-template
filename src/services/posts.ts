@@ -17,9 +17,19 @@ namespace PostsService {
     content: post.body,
   });
 
-  export const getPosts = async (): Promise<PostResponse[]> => {
-    const result = await PostsRepository.find();
-    return result.map(transformPostResponse);
+  export const getPosts = async ({ queryKey, meta }: any): Promise<PostResponse[]> => {
+    console.log('queryKey', queryKey);
+    console.log('meta', meta);
+    return [
+      {
+        user: 'test',
+        id: '1',
+        header: 'sss',
+        content: 'ss',
+      },
+    ];
+    // const result = await PostsRepository.find();
+    // return result.map(transformPostResponse);
   };
 
   export const getPostById = async (id: string | number): Promise<PostResponse> => {
