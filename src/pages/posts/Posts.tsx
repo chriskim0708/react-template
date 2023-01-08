@@ -2,13 +2,16 @@ import React, { FC } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import PostsService from '../../services/posts';
 import { useNavigate } from 'react-router-dom';
+import { useDependendQueries } from '../../hooks/queries';
 
 const Posts: FC = () => {
   const navigate = useNavigate();
   const { data, isLoading } = useQuery(['posts'], PostsService.getPosts);
+  const { token, isLoading: isTokenLoading } = useDependendQueries();
 
   return (
     <>
+      {isTokenLoading ? '...loading' : token?.access_token}
       <ul>
         {!isLoading &&
           data?.map((post) => (

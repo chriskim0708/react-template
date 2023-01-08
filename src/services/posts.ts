@@ -1,5 +1,7 @@
 import PostsRepository from '../apis/posts';
 
+const wait = async (delay: number) => new Promise((resolve) => setTimeout(resolve, delay));
+
 namespace PostsService {
   export interface PostResponse {
     user: string;
@@ -21,7 +23,9 @@ namespace PostsService {
   };
 
   export const getPostById = async (id: string | number): Promise<PostResponse> => {
-    return transformPostResponse(await PostsRepository.findById(id));
+    const result = await PostsRepository.findById(id);
+    await wait(5000);
+    return transformPostResponse(result);
   };
 }
 

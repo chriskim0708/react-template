@@ -2528,6 +2528,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-persist-client-core@npm:4.20.9":
+  version: 4.20.9
+  resolution: "@tanstack/query-persist-client-core@npm:4.20.9"
+  peerDependencies:
+    "@tanstack/query-core": 4.20.9
+  checksum: 605cf4f332c5c9d60aa7c712790db12019e90c9d39deb9687f371433d9b9d06b42d172194d0864ac1bd031e580157ae1870452446f3289ee243a243d70cc002c
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-sync-storage-persister@npm:^4.20.9":
+  version: 4.20.9
+  resolution: "@tanstack/query-sync-storage-persister@npm:4.20.9"
+  dependencies:
+    "@tanstack/query-persist-client-core": 4.20.9
+  checksum: 4010fed483fccbc31a2d82575605d8270dc40c79a713ee7d72b53eee18fd80b95276ed8a10d8c3eaac87337d3d75cc0683b9d6de8bba8394d117920b954c98da
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-persist-client@npm:^4.20.9":
+  version: 4.20.9
+  resolution: "@tanstack/react-query-persist-client@npm:4.20.9"
+  dependencies:
+    "@tanstack/query-persist-client-core": 4.20.9
+  peerDependencies:
+    "@tanstack/react-query": 4.20.9
+  checksum: 481fc081f83df24e514f8a725e2653e3cb77340787b6dca3f11fb3a2a42730981eeaf893caccc118fe036dabb52bd272b633d1b8906a7820674a1218cefd3a5d
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-query@npm:^4.20.4":
   version: 4.20.4
   resolution: "@tanstack/react-query@npm:4.20.4"
@@ -11311,7 +11340,9 @@ __metadata:
   dependencies:
     "@craco/craco": ^7.0.0
     "@reduxjs/toolkit": ^1.9.1
+    "@tanstack/query-sync-storage-persister": ^4.20.9
     "@tanstack/react-query": ^4.20.4
+    "@tanstack/react-query-persist-client": ^4.20.9
     "@testing-library/react": ^13.0.0
     "@testing-library/user-event": ^13.2.1
     "@types/jest": ^27.0.1
