@@ -6,7 +6,7 @@ namespace AuthRepository {
     refresh_token: string;
   }
 
-  export interface ISignInPayload {
+  export interface SignInPayload {
     id: string;
     password: string;
   }
@@ -17,7 +17,7 @@ namespace AuthRepository {
     token: `${prefix}/token`,
   } as const;
 
-  export const authorization = async (payload: ISignInPayload) => {
+  export const authorization = async (payload: SignInPayload) => {
     return localInstance.post<Token>(endpoints.signin, payload).then((resp) => resp.data);
   };
 
