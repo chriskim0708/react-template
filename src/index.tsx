@@ -12,9 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      cacheTime: 1000 * 60 * 60 * 24,
       suspense: true,
-      staleTime: Infinity,
     },
   },
 });

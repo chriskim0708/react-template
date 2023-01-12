@@ -16,8 +16,8 @@ namespace UsersService {
   };
 
   export const getUserById = async (id: string | number): Promise<UserResponse> => {
-    await wait(3000);
     const result = await UsersRepository.findById(id);
+    await wait(3000);
     return transformUserResponse(result);
   };
 }

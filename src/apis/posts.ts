@@ -1,5 +1,4 @@
 import { mainAuthInstance } from './instance';
-import { wait } from '@/utils/wait';
 namespace PostsRepository {
   export interface Post {
     userId: number;

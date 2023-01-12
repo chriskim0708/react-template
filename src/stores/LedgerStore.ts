@@ -1,29 +1,17 @@
 import Item from './models/Item';
 import Ledger from './models/Ledger';
+import Store from './Store';
 
 export interface LedgerSnapshot {
   items: Item[];
 }
 
-export default class LedgerStore {
-  listeners = new Set<() => void>();
-  snapshot = {} as LedgerSnapshot;
-  ledger = new Ledger();
+export default class LedgerStore extends Store<LedgerSnapshot> {
+  private ledger = new Ledger();
 
-  addListener(listener: () => void) {
-    this.listeners.add(listener);
-  }
-
-  removeListener(listener: () => void) {
-    this.listeners.delete(listener);
-  }
-
-  getSnapshot() {
-    return this.snapshot;
-  }
-
-  publish() {
-    this.listeners.forEach((listener) => listener());
+  constructor() {
+    super();
+    this.takeSnapshot();
   }
 
   takeSnapshot() {
