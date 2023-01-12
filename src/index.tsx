@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { store } from './store';
-import { Provider } from 'react-redux';
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
@@ -39,9 +37,7 @@ root.render(
         maxAge: Infinity,
       }}
     >
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </PersistQueryClientProvider>
   </React.StrictMode>,
 );
