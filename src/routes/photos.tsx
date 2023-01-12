@@ -1,5 +1,5 @@
 import React from 'react';
-import Photos from '../pages/photos/Photos';
+import Photos from '../apps/photos/Photos';
 import { Route } from 'react-router-dom';
 
 export function createPhotosRoute() {

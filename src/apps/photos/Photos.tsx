@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PhotosService from '../../services/photos';
+import PhotosService from '../../queries/photos';
 
 const Photos: FC = () => {
   const { data, isLoading } = PhotosService.usePhotosQuery();

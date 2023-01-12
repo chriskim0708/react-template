@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import UsersService from '../../services/users';
+import UsersService from '../../queries/__users';
 import { useNavigate } from 'react-router-dom';
 
 const Users: FC = () => {

@@ -1,0 +1,4 @@
+{
+  "/auth/signin": "/signin",
+  "/auth/token": "/token"
+}

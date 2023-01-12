@@ -1,54 +1,25 @@
-import { MainService } from './apis';
+import UsersRepository from '@/apis/users';
+import { wait } from '@/utils/wait';
 
 namespace UsersService {
-  interface User {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    address: {
-      street: string;
-      suite: string;
-      city: string;
-      zipcode: string;
-      geo: {
-        lat: string | number;
-        lng: string | number;
-      };
-    };
-    phone: string;
-    website: string;
-    company: {
-      name: string;
-      catchPhrase: string;
-      bs: string;
-    };
-  }
-  export type UserResponse = Pick<User, 'id' | 'name' | 'company' | 'phone'>;
+  export interface UserResponse extends UsersRepository.User {}
 
-  const prefix = 'users';
-  const endpoints = {
-    list: `${prefix}`,
-    getById: `${prefix}/:id`,
+  const transformUserResponse = (user: Partial<UsersRepository.User> = {}): UserResponse => ({
+    id: Number(user.id),
+    name: String(user.name),
+    groupId: Number(user.groupId),
+  });
+
+  export const getUsers = async (): Promise<UserResponse[]> => {
+    const result = await UsersRepository.find();
+    return result.map(transformUserResponse);
   };
-  const transformUserResponse = (user: User): UserResponse => ({
-    id: user.id,
-    name: user.name,
-    phone: user.phone,
-    company: {
-      ...user.company,
-    },
-  });
-  const api = MainService.api.injectEndpoints({
-    endpoints: (build) => ({
-      users: build.query<UserResponse[], void>({
-        query: () => endpoints.list,
-        transformResponse: (response: User[]) => response.map(transformUserResponse),
-      }),
-    }),
-    overrideExisting: false,
-  });
-  export const { useUsersQuery } = api;
+
+  export const getUserById = async (id: string | number): Promise<UserResponse> => {
+    await wait(3000);
+    const result = await UsersRepository.findById(id);
+    return transformUserResponse(result);
+  };
 }
 
 export default UsersService;

@@ -1,5 +1,45 @@
 {
   "signin": {
+    "id": "yskim",
+    "password": "1111"
+  },
+  "token": {
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "yskim",
+      "groupId": 1
+    },
+    {
+      "id": 2,
+      "name": "chris",
+      "groupId": 2
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "admin",
+      "policyId": 1
+    },
+    {
+      "id": 2,
+      "name": "user",
+      "policyId": 2
+    }
+  ],
+  "policies": [
+    {
+      "id": 1,
+      "write": true,
+      "read": true
+    },
+    {
+      "id": 2,
+      "write": false,
+      "read": true
+    }
+  ]
 }

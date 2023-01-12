@@ -1,4 +1,4 @@
-import { AnotherService } from './apis';
+import { AnotherService } from '../services/apis';
 
 namespace PhotosService {
   interface Photo {

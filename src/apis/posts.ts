@@ -1,5 +1,5 @@
-import { mainInstance } from './instance';
-
+import { mainAuthInstance } from './instance';
+import { wait } from '@/utils/wait';
 namespace PostsRepository {
   export interface Post {
     userId: number;
@@ -15,11 +15,12 @@ namespace PostsRepository {
   };
 
   export const find = async () => {
-    return mainInstance.get<Post[]>(endpoints.list).then((resp) => resp.data);
+    // await wait(5000);
+    return mainAuthInstance.get<Post[]>(endpoints.list).then((resp) => resp.data);
   };
 
   export const findById = async (id: string | number) => {
-    return mainInstance
+    return mainAuthInstance
       .get<Post>(endpoints.getById.replace(/\:id/i, String(id)))
       .then((resp) => resp.data);
   };

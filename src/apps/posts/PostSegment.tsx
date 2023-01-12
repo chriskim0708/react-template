@@ -1,12 +1,12 @@
-import React, { FC, useMemo } from 'react';
-import { useQueryClient, useQuery, useQueries } from '@tanstack/react-query';
+import { FC, useMemo } from 'react';
+import { useQueryClient, useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import PostsService from '../../services/posts';
+import PostsService from '../../queries/__posts';
 
-const serialQueries = [
-  { queryKey: ['qPosts'], queryFn: PostsService.getPosts },
-  { queryKey: ['qPostById', 1], queryFn: PostsService.getPostById.bind(null, 1) },
-];
+// const serialQueries = [
+//   { queryKey: ['qPosts'], queryFn: PostsService.getPosts },
+//   { queryKey: ['qPostById', 1], queryFn: PostsService.getPostById.bind(null, 1) },
+// ];
 
 const PostSegment: FC = () => {
   const { id = '' } = useParams();
@@ -17,13 +17,10 @@ const PostSegment: FC = () => {
   /**
    * useQueries
    * 쿼리의 병렬 호출
-   */
+   
   const [postQuery, postByIdQuery] = useQueries({
     queries: serialQueries.map(({ queryKey, queryFn }) => ({ queryKey, queryFn })),
-  });
-
-  console.log('postQuery', postQuery);
-  console.log('postByIdQuery', postByIdQuery);
+  });*/
 
   const selectPost = useMemo(() => {
     return queryClient

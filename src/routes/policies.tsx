@@ -1,16 +1,16 @@
-import Posts from '@/apps/posts/Posts';
-import PostSegment from '@/apps/posts/PostSegment';
+import Policies from '@/apps/policies/Policies';
+import PolicySegment from '@/apps/policies/PolicySegment';
 import { Route } from 'react-router-dom';
 import ProtectedRoute from './protected';
 
-export function createPostsRoute() {
+export function createPoliciesRoute() {
   return (
-    <Route path="posts">
+    <Route path="policies">
       <Route
         index
         element={
           <ProtectedRoute>
-            <Posts />
+            <Policies />
           </ProtectedRoute>
         }
       />
@@ -18,7 +18,7 @@ export function createPostsRoute() {
         path=":id"
         element={
           <ProtectedRoute>
-            <PostSegment />
+            <PolicySegment />
           </ProtectedRoute>
         }
       />

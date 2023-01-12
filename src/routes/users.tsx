@@ -1,5 +1,5 @@
-import Users from '../pages/users/Users';
-import UserSegment from '../pages/users/UserSegment';
+import Users from '../apps/users/Users';
+import UserSegment from '../apps/users/UserSegment';
 import { Route } from 'react-router-dom';
 
 export function createUsersRoute() {

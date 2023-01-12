@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from '../pages/signin/SignIn';
+import SignIn from '../apps/signin/SignIn';
 import { Route } from 'react-router-dom';
 
 export function createSignInRoute() {
