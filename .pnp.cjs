@@ -1715,7 +1715,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "commander",\
-        "npm:7.2.0"\
+        "npm:4.1.1"\
       ],\
       [\
         "comment-json",\
@@ -2100,6 +2100,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "entities",\
         "npm:2.2.0"\
+      ],\
+      [\
+        "env-cmd",\
+        "npm:10.1.0"\
       ],\
       [\
         "env-paths",\
@@ -4833,6 +4837,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/sdks", "npm:3.0.0-rc.34"],\
             ["axios", "npm:1.2.2"],\
             ["craco-alias", "npm:3.0.1"],\
+            ["env-cmd", "npm:10.1.0"],\
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-prettier", "virtual:66359d9038687ceed83f5e1fa567042688d210997c16386221b37b2518a39cf042e6f388195a8109a98361fa58737f422e2683f89c982bcc1dbef43871dc8011#npm:8.6.0"],\
             ["eslint-plugin-prettier", "virtual:66359d9038687ceed83f5e1fa567042688d210997c16386221b37b2518a39cf042e6f388195a8109a98361fa58737f422e2683f89c982bcc1dbef43871dc8011#npm:4.2.1"],\
@@ -12124,6 +12129,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/commander-npm-4.1.1-22a0fe921b-d7b9913ff9.zip/node_modules/commander/",\
+          "packageDependencies": [\
+            ["commander", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:7.2.0", {\
           "packageLocation": "./.yarn/cache/commander-npm-7.2.0-19178180f8-53501cbeee.zip/node_modules/commander/",\
           "packageDependencies": [\
@@ -13447,6 +13459,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/entities-npm-2.2.0-0fc8d5b2f7-19010dacaf.zip/node_modules/entities/",\
           "packageDependencies": [\
             ["entities", "npm:2.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["env-cmd", [\
+        ["npm:10.1.0", {\
+          "packageLocation": "./.yarn/cache/env-cmd-npm-10.1.0-85470635d6-efef550742.zip/node_modules/env-cmd/",\
+          "packageDependencies": [\
+            ["env-cmd", "npm:10.1.0"],\
+            ["commander", "npm:4.1.1"],\
+            ["cross-spawn", "npm:7.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -20706,6 +20729,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/sdks", "npm:3.0.0-rc.34"],\
             ["axios", "npm:1.2.2"],\
             ["craco-alias", "npm:3.0.1"],\
+            ["env-cmd", "npm:10.1.0"],\
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-prettier", "virtual:66359d9038687ceed83f5e1fa567042688d210997c16386221b37b2518a39cf042e6f388195a8109a98361fa58737f422e2683f89c982bcc1dbef43871dc8011#npm:8.6.0"],\
             ["eslint-plugin-prettier", "virtual:66359d9038687ceed83f5e1fa567042688d210997c16386221b37b2518a39cf042e6f388195a8109a98361fa58737f422e2683f89c982bcc1dbef43871dc8011#npm:4.2.1"],\

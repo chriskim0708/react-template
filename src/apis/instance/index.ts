@@ -7,16 +7,16 @@ export const mainInstance = axios.create({
 });
 
 export const mainAuthInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: process.env.REACT_APP_API_URL,
   withCredentials: true,
 });
 
 export const localInstance = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: process.env.REACT_APP_TEST_API_URL,
 });
 
 export const localAuthInstance = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: process.env.REACT_APP_TEST_API_URL,
   withCredentials: true,
 });
 

@@ -6,13 +6,7 @@ import {
   RouterProvider,
   Outlet,
 } from 'react-router-dom';
-import {
-  createPostsRoute,
-  createUsersRoute,
-  createPhotosRoute,
-  createSignInRoute,
-  createPoliciesRoute,
-} from './routes';
+import { createPostsRoute, createSignInRoute, createPoliciesRoute } from './routes';
 import { useQueryClient } from '@tanstack/react-query';
 import { getQueryCache } from '@/adapters/storage';
 import { queryKeys } from './constants/queries';
@@ -21,8 +15,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       {createPostsRoute()}
-      {createUsersRoute()}
-      {createPhotosRoute()}
       {createSignInRoute()}
       {createPoliciesRoute()}
       <Route index element={<Navigate to="/signin" replace />} />
