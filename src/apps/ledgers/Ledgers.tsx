@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import useLedgerStore from '@/hooks/useLedgerStore';
+import useListStore from '@/hooks/useListStore';
 
 const LedgerList = () => {
-  const [snapshot] = useLedgerStore();
+  const [snapshot] = useListStore();
   const { items } = snapshot;
   return (
     <div>
@@ -14,10 +14,10 @@ const LedgerList = () => {
 };
 
 const Ledgers: FC = () => {
-  const [, ledgerStore] = useLedgerStore();
+  const [, listStore] = useListStore();
 
   const onClick = () => {
-    ledgerStore.addItem({ ledgerId: Math.random() * 10000, quantity: 2 });
+    listStore.addItem({ listId: Math.random() * 10000, quantity: 2 });
   };
 
   return (
