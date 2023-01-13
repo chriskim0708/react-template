@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import useListStore from '@/hooks/useListStore';
+import tw, { styled } from 'twin.macro';
 
 const LedgerList = () => {
   const [snapshot] = useListStore();
@@ -22,6 +23,8 @@ const Ledgers: FC = () => {
 
   return (
     <>
+      <div tw="font-20-b p-5">test</div>
+      <StyledText>test</StyledText>
       <div>
         <button onClick={onClick}>add item</button>
         <LedgerList />
@@ -29,5 +32,9 @@ const Ledgers: FC = () => {
     </>
   );
 };
+
+const StyledText = styled.div`
+  ${tw`font-20-b p-5`}
+`;
 
 export default Ledgers;

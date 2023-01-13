@@ -6,8 +6,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "plugins": ["@typescript-eslint", "prettier", "react"],
-  "ignorePatterns": ["node_modules/", "*.config.js"],
+  "plugins": ["@typescript-eslint", "prettier", "react", "@emotion"],
+  "ignorePatterns": ["node_modules/", "*.config.js", "src/plugins/*.js"],
   "env": {
     "browser": true,
     "node": true,
@@ -16,6 +16,7 @@
   "rules": {
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-namespace": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css", "tw"] }]
   }
 }
