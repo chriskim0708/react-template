@@ -1,6 +1,8 @@
-import { typographyProperty, TypographyRecord } from './typography';
-export { typography } from './typography';
-
+import Typography from './typography';
 export interface CustomTheme {
-  [typographyProperty]: TypographyRecord;
+  [Typography.property]: Typography.Styles;
 }
+
+export const theme = {
+  typography: Typography.typography,
+};

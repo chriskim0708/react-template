@@ -16,7 +16,7 @@ import {
 import { useQueryClient } from '@tanstack/react-query';
 import { getQueryCache } from '@/adapters/storage';
 import { queryKeys } from './constants/queries';
-import { typography } from '@/styles/emotion';
+import { theme } from '@/styles/emotion';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,11 +34,7 @@ function App() {
   const queryClient = useQueryClient();
   queryClient.setQueryData([queryKeys.token], getQueryCache(queryKeys.token));
   return (
-    <ThemeProvider
-      theme={{
-        typography,
-      }}
-    >
+    <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
       <Outlet />
     </ThemeProvider>

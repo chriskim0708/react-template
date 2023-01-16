@@ -1,18 +1,21 @@
 import { CSSObject } from '@emotion/serialize';
 import { EnumValues } from '@/types';
+namespace Typography {
+  export const property = 'typography';
+  export const values = {
+    body20Bold: 'body_20_b',
+  } as const;
 
-export const typographyProperty = 'typography';
-export const typographyValues = {
-  body20Bold: 'body_20_b',
-} as const;
+  export type Key = EnumValues<typeof values>;
+  export type Styles = Record<Key, CSSObject>;
 
-type TypographyCSSKey = EnumValues<typeof typographyValues>;
-export type TypographyRecord = Record<TypographyCSSKey, CSSObject>;
+  export const typography: Styles = {
+    [values.body20Bold]: {
+      fontSize: '50px',
+      color: '#0000ff',
+      fontWeight: 'bold',
+    },
+  };
+}
 
-export const typography: TypographyRecord = {
-  [typographyValues.body20Bold]: {
-    fontSize: '50px',
-    color: '#0000ff',
-    fontWeight: 'bold',
-  },
-};
+export default Typography;
