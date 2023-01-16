@@ -23,8 +23,9 @@ const Ledgers: FC = () => {
 
   return (
     <>
-      <div tw="font-20-b p-5">test</div>
-      <StyledText>test</StyledText>
+      <div tw="body-20-b p-5">test</div>
+      <StyledText>tw style test</StyledText>
+      <StyledContent>emotion style test</StyledContent>
       <div>
         <button onClick={onClick}>add item</button>
         <LedgerList />
@@ -34,7 +35,11 @@ const Ledgers: FC = () => {
 };
 
 const StyledText = styled.div`
-  ${tw`font-20-b p-5`}
+  ${tw`body-20-b p-5`}
+`;
+
+const StyledContent = styled.div`
+  ${({ theme }) => theme.typography.body_20_b}
 `;
 
 export default Ledgers;

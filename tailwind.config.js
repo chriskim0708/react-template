@@ -2,5 +2,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('./src/plugins/fonts')],
+  plugins: [require('./src/styles/tailwindcss/typhography')],
 };
