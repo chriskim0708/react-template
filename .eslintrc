@@ -18,6 +18,6 @@
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-namespace": "off",
     "react/react-in-jsx-scope": "off",
-    "react/no-unknown-property": ["error", { "ignore": ["css", "tw"] }]
+    "react/no-unknown-property": ["error", { "ignore": ["tw"] }]
   }
 }
