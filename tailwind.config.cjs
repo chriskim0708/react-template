@@ -4,5 +4,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('src/styles/emotion/typography')],
+  plugins: [require('./src/styles/tailwindcss/typography')],
 };
