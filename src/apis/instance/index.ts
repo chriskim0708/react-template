@@ -7,16 +7,16 @@ export const mainInstance = axios.create({
 });
 
 export const mainAuthInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: import.meta.env.REACT_APP_API_URL,
   withCredentials: true,
 });
 
 export const localInstance = axios.create({
-  baseURL: process.env.REACT_APP_TEST_API_URL,
+  baseURL: import.meta.env.REACT_APP_TEST_API_URL,
 });
 
 export const localAuthInstance = axios.create({
-  baseURL: process.env.REACT_APP_TEST_API_URL,
+  baseURL: import.meta.env.REACT_APP_TEST_API_URL,
   withCredentials: true,
 });
 
